@@ -1,0 +1,92 @@
+---
+title: "Espace L_P"
+about:
+  template: jolla
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+
+## Espaces $L^P$
+
+L'idée est d'étendre les définitions des différentes normes rencontrées dans les espaces de dimension finies.
+
+#### Les semi-normes $\|.\|_p$
+
+On prend $f$ :$X \to \mathbb R$ une fonction mesurable. et $a \in \mathbb R$ un majorant de $f$ si $f(x)\leq a$ pour tout $X$, i.e. $\{f>a\}=f^{-1}(]a, +\infty[])=\emptyset$.
+
+C'est à dire $\mu(\{f>a\})=\mu(f^{-1}(]a, +\infty[))=\emptyset$.
+
+Définition : Soit $p \in [1, +\infty[$. Si $f$ :$X \to \mathbb K$ est mesurable, on note $$ \|f\|_p:=(\int_{x}|f|^p d\mu)^{\frac{1}{p}}\in \mathbb R_{+}\cup \{+\infty\}$$
+
+::: exercise-box
+**Énoncé**
+
+Inégalités de Young. Soient ( a, b \in \mathbb{R}\^+ ) et ( p, q \in \]1, +\infty[ \) deux exposants conjugués. Alors
+
+\[ ab \leq \frac{a^p}{p} + \frac{b^q}{q}. \]
+
+<details>
+<summary><strong>Corrigé</strong></summary>
+La fonction exponentielle \( t \mapsto e^t \) est convexe (de \( \mathbb{R} \) dans \( \mathbb{R} \)). On a donc, pour tout \( t_1, t_2 \in \mathbb{R} \) et tout \( t \in [0, 1] ),
+
+\[ e\^{t t_1 + (1-t) t_2} \leq t e\^{t_1} + (1-t) e\^{t_2}. \]
+
+Soit ( a, b \> 0 ) (les autres cas sont triviaux). On prend ( t = \frac{1}{p} ) (de sorte que ( 1 - t = \frac{1}{q} )), ( t_1 = p \ln(a) ) et ( t_2 = q \ln(b) ). On obtient bien
+
+\[ ab \leq \frac{a^p}{p} + \frac{b^q}{q}. \]
+
+</details>
+:::
+
+::: exercise-box
+**Énoncé**
+
+Inégalité de Hölder. Soit ((X, \mathcal{A}, \mu)) un espace mesuré et ( p, q \in [1, +\infty] ) des exposants conjugués. Si ( f \in L_p(X, \mathbb{K}) ) et ( g \in L_q(X, \mathbb{K}) ) alors ( fg \in L_1(X, \mathbb{K}) ) et
+
+\[ \|fg\|\_1 \leq \|f\|\_p \|g\|\_q. \]
+
+<details>
+
+<summary><strong>Corrigé</strong></summary>
+
+Le produit ( fg ) est mesurable car ( f ) et ( g ) le sont. - Si ( p = 1 ) et ( q = +\infty ), alors
+
+\[ \int*X \|f(x) g(x)\| , d\mu \leq \|g\|\infty \int\_X \|f\| , d\mu = \|f\|1 \|g\|\*\infty \]
+
+et l'inégalité est vérifiée. - Si ( p \in \]1, +\infty\[ ), alors l'inégalité de Young donne
+
+\[ \|f(x) g(x)\| \leq \frac{|f(x)|^p}{p} + \frac{|g(x)|^q}{q} \]
+
+pour tout ( x \in X ). Les propriétés de l’intégrale permettent d’écrire :
+
+\[ \int\_X \|fg\| , d\mu \leq \frac{1}{p} \int\_X \|f\|\^p , d\mu + \frac{1}{q} \int\_X \|g\|\^q , d\mu \< +\infty. \]
+
+Donc, ( fg \in L_1(X) ).
+
+Pour montrer l’inégalité, on distingue maintenant 3 cas :
+
+-   Cas 1. ( \|f\|\_p = 0 ) ou ( \|g\|\_q = 0 ). On a alors ( f = 0 ) ou ( g = 0 ). On en déduit ( fg = 0 ), donc ( \|fg\|\_1 = 0 ) et l'inégalité est vérifiée.
+-   Cas 2. ( \|f\|\_p = 1 ) et ( \|g\|\_q = 1 ). On a alors :
+
+\[ \|fg\|\_1 = \int\_X \|fg\| , d\mu \leq \frac{1}{p} + \frac{1}{q} = 1 = \|f\|\_p \|g\|\_q. \]
+
+L’inégalité est donc vraie.
+
+-   Cas 3. ( \|f\|\_p \> 0 ) et ( \|g\|\_q \> 0 ). On pose alors ( f_1 = \frac{f}{\|f\|_p} ) et ( g_1 = \frac{g}{\|g\|_q} ), de sorte que ( \|f_1\|\_p = \|g_1\|\_q = 1 ).
+
+Le Cas 2 donne alors
+
+$$\frac{\|fg\|_1}{ \|f\|_p \|g\|_q} = \|f_1 g_1\|_1 \leq 1. $$
+
+Ce qui démontre l’inégalité.
+
+</details>
+:::

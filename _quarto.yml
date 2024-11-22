@@ -1,0 +1,67 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  back-to-top-navigation: true
+  reader-mode: true
+  search: 
+    location: navbar
+    type: overlay
+  
+  title: "Yéro"
+  navbar:
+    left:
+      - text: À propos
+        href: about.qmd
+      - text: Analyse
+        menu:
+          - text: Integrales généralisées
+            href: analyse/Int_generalise.qmd
+          - text: Equations différentielles
+            href: analyse/equation-diff2.qmd
+          - text: Espace L_P
+            href: analyse/exo-espace_LP.qmd
+      - text: Algèbre
+        menu:
+          - text: Introduction
+            href: algebre/introduction.qmd
+          - text: Théorie des groupes
+            href: algebre/theorie_des_groupes.qmd
+          - text: Théorie des anneaux
+            href: algebre/theorie_des_anneaux.qmd
+      - text: Proba-Stats
+        menu:
+          - text: Introduction
+            href: proba-stats/introduction.qmd
+          - text: Théorie des probabilitées
+            href: proba-stats/theorie_des_proba.qmd
+          - text: Statistique
+            href: proba-stats/stats.qmd
+      - text: Other
+        href: other.qmd
+      
+    right: 
+      - icon: github
+        href: https://github.com/
+      - icon: twitter
+        href: https://twitter.com
+  
+  page-footer:
+    background: light
+    left: "Copyright 2024, Yéro Diamanka" 
+    right: 
+      - icon: github
+        href: https://github.com/
+      - icon: twitter 
+        href: https://twitter.com/ 
+  
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: [cosmo, theme-dark.scss]
+    mathjax: default
+    css: styles.css
+
+editor: visual
